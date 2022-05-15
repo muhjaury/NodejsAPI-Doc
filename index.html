@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Sejutacita API Doc</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="assets/css/simple-sidebar.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Sejutacita API Doc</div>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action bg-light">Documentation</a>
+        <li class="list-group-item list-group-item-action bg-light">
+            <ul><a href="#Token">Get Token</a></ul>
+            <ul><a href="#RefreshToken">Refresh Token</a></ul>
+            <ul><a href="#Select">Select</a></ul>
+            <ul><a href="#Insert">Insert</a></ul>
+            <ul><a href="#Update">Update</a></ul>
+            <ul><a href="#Delete">Delete</a></ul>
+        </li>
+      </div>
+    </div>
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+  
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+
+        <h2 class="md-4" id="Token">Token</h2>
+        <p>Method "Token" digunakan untuk login sekaligus mendapatkan Token dan Refresh Token.</p>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#token-url">URL</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#token-parameter">Parameter</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#token-example">Example</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="container tab-pane active" id="token-url" style="padding-left: 0px;">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Method</td>
+                            <td>URL</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>POST</td>
+                            <td>http://localhost:3001/user/login</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container tab-pane fade" id="token-parameter"  style="padding-left: 0px;">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Jenis</td>
+                            <td>Parameter</td>
+                            <td>Wajib</td>
+                            <td>Tipe</td>
+                            <td>Keterangan</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>RAW</td>
+                            <td>Username</td>
+                            <td>Ya</td>
+                            <td>String</td>
+                            <td>Username</td>
+                        </tr>
+                        <tr>
+                            <td>RAW</td>
+                            <td>Password</td>
+                            <td>Ya</td>
+                            <td>String</td>
+                            <td>Password</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container tab-pane fade" id="token-example"  style="padding-left: 0px;">
+                <script src="https://gist.github.com/muhjaury/e9386e3247bf834abac95c3c0f30cd56.js"></script>
+            </div>
+        </div>
+        <h2 class="md-4">Response</h2>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#token-view-response">Response Sukses</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#token-fail-response">Response Gagal</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#token-explain-response">Penjelasan Response</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="container tab-pane active" id="token-view-response" style="padding-left: 0px;">
+                <script src="https://gist.github.com/muhjaury/7c6d83dffe3bcaa7b329aa2de52ad81a.js"></script>
+            </div>
+            <div class="container tab-pane fade" id="token-fail-response"  style="padding-left: 0px;">
+                <script src="https://gist.github.com/muhjaury/67e34f48e17cdad40fd1f7c897e148ff.js"></script>
+            </div>
+            <div class="container tab-pane fade" id="token-explain-response"  style="padding-left: 0px;">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Komponen</td>
+                            <td>Tipe</td>
+                            <td>Keterangan</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>_fail[x]</td>
+                            <td>String</td>
+                            <td>Komentar keterangan fail</td>
+                        </tr>
+                        <tr>
+                            <td>status</td>
+                            <td>Number</td>
+                            <td>Kode status</td>
+                        </tr>
+                        <tr>
+                            <td>message</td>
+                            <td>String</td>
+                            <td>Pesan dari failure</td>
+                        </tr>
+                        <tr>
+                            <td>token</td>
+                            <td>String</td>
+                            <td>Token untuk menggunakan API</td>
+                        </tr>
+                        <tr>
+                            <td>refreshToken</td>
+                            <td>String</td>
+                            <td>Token yang digunakan untuk refresh Token apabila sudah expire tanpa login ulang</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2 class="md-4" id="Select">Refresh Token</h2>
+        <p>Method "Refresh Token" digunakan untuk memperbaharui token User tanpa harus login ulang</p>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#refreshToken-request-url">URL</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#refreshToken-request-parameter">Parameter</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#refreshToken-example">Example</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="container tab-pane active" id="refreshToken-request-url" style="padding-left: 0px;">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Method</td>
+                            <td>URL</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>POST</td>
+                            <td>http://localhost:3001/api/generate</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container tab-pane fade" id="refreshToken-request-parameter"  style="padding-left: 0px;">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Jenis</td>
+                            <td>Parameter</td>
+                            <td>Wajib</td>
+                            <td>Tipe</td>
+                            <td>Keterangan</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HEAD</td>
+                            <td>username</td>
+                            <td>Ya</td>
+                            <td>String</td>
+                            <td>Username</td>
+                        </tr>
+                        <tr>
+                            <td>HEAD</td>
+                            <td>refresh-key</td>
+                            <td>Ya</td>
+                            <td>String</td>
+                            <td>Refresh Key dari login</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container tab-pane fade" id="refreshToken-example"  style="padding-left: 0px;">
+                <script src="https://gist.github.com/muhjaury/bf5b4d8192add1b99afdc23c1e982585.js"></script>
+            </div>
+        </div>
+        <h2 class="md-4">Response</h2>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#refreshToken-view-response">Response Sukses</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#refreshToken-fail-response">Response Gagal</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#refreshToken-explain-response">Penjelasan Response</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="container tab-pane active" id="refreshToken-view-response" style="padding-left: 0px;">
+                <script src="https://gist.github.com/muhjaury/ef14e77c2d714f2aec7c0504ffa7ab64.js"></script>
+            </div>
+            <div class="container tab-pane fade" id="refreshToken-fail-response"  style="padding-left: 0px;">
+                <script src="https://gist.github.com/muhjaury/65b53b02951c7fa6e05c96a123407142.js"></script>
+            </div>
+            <div class="container tab-pane fade" id="refreshToken-explain-response"  style="padding-left: 0px;">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Komponen</td>
+                            <td>Tipe</td>
+                            <td>Keterangan</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>_fail[x]</td>
+                            <td>String</td>
+                            <td>Komentar keterangan fail</td>
+                        </tr>
+                        <tr>
+                            <td>status</td>
+                            <td>Number</td>
+                            <td>Kode status</td>
+                        </tr>
+                        <tr>
+                            <td>message</td>
+                            <td>String</td>
+                            <td>Pesan dari failure</td>
+                        </tr>
+                        <tr>
+                            <td>token</td>
+                            <td>String</td>
+                            <td>Token baru setelah refresh</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2 class="md-4" id="Select">Select</h2>
+        <p>Method "Select" digunakan untuk melihat dataset user (Admin privelege) dan sebuah data user (User privilege)</p>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#select-request-url">URL</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#select-request-parameter">Parameter</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#select-example">Example</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="container tab-pane active" id="select-request-url" style="padding-left: 0px;">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Method</td>
+                            <td>URL</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GET</td>
+                            <td>http://localhost:3001/api/read</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container tab-pane fade" id="select-request-parameter"  style="padding-left: 0px;">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Jenis</td>
+                            <td>Parameter</td>
+                            <td>Wajib</td>
+                            <td>Tipe</td>
+                            <td>Keterangan</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HEAD</td>
+                            <td>username</td>
+                            <td>Ya</td>
+                            <td>String</td>
+                            <td>Username</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container tab-pane fade" id="select-example"  style="padding-left: 0px;">
+                <script src="https://gist.github.com/muhjaury/0d5f51964c2e617f068debbb1d291f31.js"></script>
+            </div>
+        </div>
+        <h2 class="md-4">Response</h2>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#select-view-response">Response Sukses</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#select-fail-response">Response Gagal</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#select-explain-response">Penjelasan Response</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="container tab-pane active" id="select-view-response" style="padding-left: 0px;">
+                <script src="https://gist.github.com/muhjaury/873a1d05f70ee4b7ef03f659da10b185.js"></script>
+            </div>
+            <div class="container tab-pane fade" id="select-fail-response"  style="padding-left: 0px;">
+                <script src="https://gist.github.com/muhjaury/eb47442012c4f1ddbbaa6fbc1a4c8555.js"></script>
+            </div>
+            <div class="container tab-pane fade" id="select-explain-response"  style="padding-left: 0px;">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Komponen</td>
+                            <td>Tipe</td>
+                            <td>Keterangan</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>_fail[x]</td>
+                            <td>String</td>
+                            <td>Komentar keterangan fail</td>
+                        </tr>
+                        <tr>
+                            <td>status</td>
+                            <td>Number</td>
+                            <td>Kode status</td>
+                        </tr>
+                        <tr>
+                            <td>message</td>
+                            <td>String</td>
+                            <td>Pesan dari failure</td>
+                        </tr>
+                        <tr>
+                            <td>_id</td>
+                            <td>String</td>
+                            <td>ID User</td>
+                        </tr>
+                        <tr>
+                            <td>username</td>
+                            <td>String</td>
+                            <td>Username</td>
+                        </tr>
+                        <tr>
+                            <td>password</td>
+                            <td>String</td>
+                            <td>Password</td>
+                        </tr>
+                        <tr>
+                            <td>role</td>
+                            <td>String</td>
+                            <td>Tipe User</td>
+                        </tr>
+                        <tr>
+                            <td>created_at</td>
+                            <td>DATE TIME</td>
+                            <td>Waktu data dibuat</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2 class="md-4" id="Insert">Insert</h2>
+        <p>Method "Insert" digunakan untuk membuat user baru oleh Admin (Admin Privilege)</p>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#input-request-url">URL</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#input-request-parameter">Parameter</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#input-example">Example</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="container tab-pane active" id="input-request-url" style="padding-left: 0px;">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Method</td>
+                            <td>URL</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>POST</td>
+                            <td>http://localhost:3001/api/create</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container tab-pane fade " id="input-request-parameter"  style="padding-left: 0px;">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Jenis</td>
+                            <td>Parameter</td>
+                            <td>Wajib</td>
+                            <td>Tipe</td>
+                            <td>Keterangan</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HEAD</td>
+                            <td>username</td>
+                            <td>Ya</td>
+                            <td>String</td>
+                            <td>Username</td>
+                        </tr>
+                        <tr>
+                            <td>RAW</td>
+                            <td>username</td>
+                            <td>Ya</td>
+                            <td>String</td>
+                            <td>Username</td>
+                        </tr>
+                        <tr>
+                            <td>RAW</td>
+                            <td>password</td>
+                            <td>Ya</td>
+                            <td>String</td>
+                            <td>Password</td>
+                        </tr>
+                        <tr>
+                            <td>POST</td>
+                            <td>role</td>
+                            <td>Wajib</td>
+                            <td>String</td>
+                            <td>Tipe User</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container tab-pane fade" id="input-example"  style="padding-left: 0px;">
+                <script src="https://gist.github.com/muhjaury/6ac2216132f1dda3a01439842c58fb4c.js"></script>
+            </div>
+            <h2 class="md-4">Response</h2>
+            <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#input-view-response">Response Sukses</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#input-fail-response">Response Gagal</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#input-explain-response">Penjelasan Response</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="container tab-pane active" id="input-view-response" style="padding-left: 0px;">
+                    <script src="https://gist.github.com/muhjaury/27d39af6ea0c3e2434a781d4661f41c7.js"></script>
+                </div>
+                <div class="container tab-pane fade" id="input-fail-response"  style="padding-left: 0px;">
+                    <script src="https://gist.github.com/muhjaury/24720c4a3c32f61e7af426dace8833bf.js"></script>
+                </div>
+                <div class="container tab-pane fade" id="input-explain-response"  style="padding-left: 0px;">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <td>Komponen</td>
+                                <td>Tipe</td>
+                                <td>Keterangan</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>_fail[x]</td>
+                                <td>String</td>
+                                <td>Komentar keterangan fail</td>
+                            </tr>
+                            <tr>
+                                <td>status</td>
+                                <td>Number</td>
+                                <td>Kode status</td>
+                            </tr>
+                            <tr>
+                                <td>message</td>
+                                <td>String</td>
+                                <td>Pesan dari failure</td>
+                            </tr>
+                            <tr>
+                                <td>_id</td>
+                                <td>String</td>
+                                <td>ID User</td>
+                            </tr>
+                            <tr>
+                                <td>username</td>
+                                <td>String</td>
+                                <td>Username</td>
+                            </tr>
+                            <tr>
+                                <td>password</td>
+                                <td>String</td>
+                                <td>Password</td>
+                            </tr>
+                            <tr>
+                                <td>role</td>
+                                <td>String</td>
+                                <td>Tipe User</td>
+                            </tr>
+                            <tr>
+                                <td>created_at</td>
+                                <td>DATE TIME</td>
+                                <td>Waktu data dibuat</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <h2 class="md-4" id="Update">Update Data</h2>
+        <p>Method "Update" digunakan untuk memperbarui data dari User seperti Username dan Password (Admin Privelege)</p>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#update-request-url">URL</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#update-request-parameter">Parameter</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#update-example">Example</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="container tab-pane active " id="update-request-url" style="padding-left: 0px;">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Method</td>
+                            <td>URL</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>PATCH</td>
+                            <td>http://localhost:3001/api/update/[:Id User]</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container tab-pane fade " id="update-request-parameter"  style="padding-left: 0px;">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Jenis</td>
+                            <td>Parameter</td>
+                            <td>Wajib</td>
+                            <td>Tipe</td>
+                            <td>Keterangan</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HEAD</td>
+                            <td>username</td>
+                            <td>Ya</td>
+                            <td>String</td>
+                            <td>Username</td>
+                        </tr>
+                        <tr>
+                            <td>Params (In URL)</td>
+                            <td>id</td>
+                            <td>Wajib</td>
+                            <td>String</td>
+                            <td>Id User</td>
+                        </tr>
+                        <tr>
+                            <td>RAW</td>
+                            <td>username</td>
+                            <td>Wajib</td>
+                            <td>String</td>
+                            <td>Username</td>
+                        </tr>
+                        <tr>
+                            <td>RAW</td>
+                            <td>password</td>
+                            <td>Wajib</td>
+                            <td>String</td>
+                            <td>Password</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container tab-pane fade" id="update-example"  style="padding-left: 0px;">
+                <script src="https://gist.github.com/muhjaury/149a235914fe4c63401a553bf96072be.js"></script>
+            </div>
+            <h2 class="md-4">Response</h2>
+            <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#update-view-response">Response Sukses</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#update-fail-response">Response Gagal</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#update-explain-response">Penjelasan Response</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="container tab-pane active" id="update-view-response" style="padding-left: 0px;">
+                    <script src="https://gist.github.com/muhjaury/2414aa7c760e464e43bbe5a91478ea78.js"></script>
+                </div>
+                <div class="container tab-pane fade" id="update-fail-response"  style="padding-left: 0px;">
+                    <script src="https://gist.github.com/muhjaury/bc6dbc5192036851f09639916f2d5e7f.js"></script>
+                </div>
+                <div class="container tab-pane fade" id="update-explain-response"  style="padding-left: 0px;">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <td>Komponen</td>
+                                <td>Tipe</td>
+                                <td>Keterangan</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>_fail[x]</td>
+                                <td>String</td>
+                                <td>Komentar keterangan fail</td>
+                            </tr>
+                            <tr>
+                                <td>status</td>
+                                <td>Number</td>
+                                <td>Kode status</td>
+                            </tr>
+                            <tr>
+                                <td>message</td>
+                                <td>String</td>
+                                <td>Pesan dari failure</td>
+                            </tr>
+                            <tr>
+                                <td>New Username</td>
+                                <td>String</td>
+                                <td>Username baru setelah update</td>
+                            </tr>
+                            <tr>
+                                <td>New Password</td>
+                                <td>String</td>
+                                <td>Password baru setelah update</td>
+                            </tr>
+                            <tr>
+                                <td>Encrypted Password</td>
+                                <td>String</td>
+                                <td>Chipertext dari password setelah proses hash</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <h2 class="md-4" id="Delete">Delete Data</h2>
+        <p>Method "Delete" digunakan untuk menghapus data user (Admin Privilege)</p>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#delete-request-url">URL</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#delete-request-parameter">Parameter</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#delete-example">Example</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="container tab-pane active " id="delete-request-url" style="padding-left: 0px;">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Method</td>
+                            <td>URL</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DELETE</td>
+                            <td>http://localhost:3001/api/delete/[:Id User]</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container tab-pane fade " id="delete-request-parameter"  style="padding-left: 0px;">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Jenis</td>
+                            <td>Parameter</td>
+                            <td>Wajib</td>
+                            <td>Tipe</td>
+                            <td>Keterangan</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HEAD</td>
+                            <td>username</td>
+                            <td>Ya</td>
+                            <td>String</td>
+                            <td>Username</td>
+                        </tr>
+                        <tr>
+                            <td>Params (In URL)</td>
+                            <td>id</td>
+                            <td>Wajib</td>
+                            <td>String</td>
+                            <td>Id User</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container tab-pane fade" id="delete-example"  style="padding-left: 0px;">
+                <script src="https://gist.github.com/muhjaury/4621f9ee29f6e189fb5cb41032189c12.js"></script>
+            </div>
+        </div>
+        <h2 class="md-4">Response</h2>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#delete-view-response">Response Sukses</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#delete-fail-response">Response Gagal</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#delete-explain-response">Penjelasan Response</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="container tab-pane active" id="delete-view-response" style="padding-left: 0px;">
+                <script src="https://gist.github.com/muhjaury/bac7b4927e0746f86c54f5f74e020f79.js"></script>
+            </div>
+            <div class="container tab-pane fade" id="delete-fail-response"  style="padding-left: 0px;">
+                <script src="https://gist.github.com/muhjaury/f15f8c2977e628dc22801b3ecb71f9cc.js"></script>
+            </div>
+            <div class="container tab-pane fade" id="delete-explain-response"  style="padding-left: 0px;">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Komponen</td>
+                            <td>Tipe</td>
+                            <td>Keterangan</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>_fail[x]</td>
+                            <td>String</td>
+                            <td>Komentar keterangan fail</td>
+                        </tr>
+                        <tr>
+                            <td>status</td>
+                            <td>Number</td>
+                            <td>Kode status</td>
+                        </tr>
+                        <tr>
+                            <td>message</td>
+                            <td>String</td>
+                            <td>Pesan dari failure</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-right" style="margin-right: 20px;">2022 &copy;
+    <a href="https://github.com/muhjaury/">Muhammad Jaury</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+  </div>
+
+  
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+</html>
