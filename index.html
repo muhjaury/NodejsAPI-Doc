@@ -17,7 +17,7 @@
   <div class="d-flex" id="wrapper">
 
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Sejutacita API Doc</div>
+      <div class="sidebar-heading">Sejutacita API</div>
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item list-group-item-action bg-light">Documentation</a>
         <li class="list-group-item list-group-item-action bg-light">
@@ -49,10 +49,10 @@
       <div class="container-fluid">
 
         <h2 class="md-4" id="Token">Token</h2>
-        <p>Method "Token" digunakan untuk login sekaligus mendapatkan Token dan Refresh Token.</p>
+        <p><b>Token</b> method is used to login as well as get token and refresh token for authentication. The token expires in 59 seconds.</p>
         <ul class="nav nav-tabs">
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#token-url">URL</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#token-parameter">Parameter</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#token-value">Parameter</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#token-example">Example</a></li>
         </ul>
 
@@ -73,29 +73,29 @@
                     </tbody>
                 </table>
             </div>
-            <div class="container tab-pane fade" id="token-parameter"  style="padding-left: 0px;">
+            <div class="container tab-pane fade" id="token-value"  style="padding-left: 0px;">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <td>Jenis</td>
-                            <td>Parameter</td>
-                            <td>Wajib</td>
-                            <td>Tipe</td>
-                            <td>Keterangan</td>
+                            <td>Key</td>
+                            <td>Value</td>
+                            <td>Mandatory</td>
+                            <td>Type</td>
+                            <td>Description</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>RAW</td>
                             <td>Username</td>
-                            <td>Ya</td>
+                            <td>Yes</td>
                             <td>String</td>
                             <td>Username</td>
                         </tr>
                         <tr>
                             <td>RAW</td>
                             <td>Password</td>
-                            <td>Ya</td>
+                            <td>Yes</td>
                             <td>String</td>
                             <td>Password</td>
                         </tr>
@@ -108,9 +108,9 @@
         </div>
         <h2 class="md-4">Response</h2>
         <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#token-view-response">Response Sukses</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#token-fail-response">Response Gagal</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#token-explain-response">Penjelasan Response</a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#token-view-response">Success Response</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#token-fail-response">Fail Response</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#token-explain-response">Response Explanation</a></li>
         </ul>
         <div class="tab-content">
             <div class="container tab-pane active" id="token-view-response" style="padding-left: 0px;">
@@ -123,36 +123,36 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <td>Komponen</td>
-                            <td>Tipe</td>
-                            <td>Keterangan</td>
+                            <td>Key</td>
+                            <td>Type</td>
+                            <td>Description</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>_fail[x]</td>
                             <td>String</td>
-                            <td>Komentar keterangan fail</td>
+                            <td>Description fail comment</td>
                         </tr>
                         <tr>
                             <td>status</td>
                             <td>Number</td>
-                            <td>Kode status</td>
+                            <td>Status Code</td>
                         </tr>
                         <tr>
                             <td>message</td>
                             <td>String</td>
-                            <td>Pesan dari failure</td>
+                            <td>Message from failure</td>
                         </tr>
                         <tr>
                             <td>token</td>
                             <td>String</td>
-                            <td>Token untuk menggunakan API</td>
+                            <td>Token for using API</td>
                         </tr>
                         <tr>
                             <td>refreshToken</td>
                             <td>String</td>
-                            <td>Token yang digunakan untuk refresh Token apabila sudah expire tanpa login ulang</td>
+                            <td>Refresh token to refresh the main token if it has expired without re-logging in. </td>
                         </tr>
                     </tbody>
                 </table>
@@ -161,11 +161,11 @@
 
         <hr>
 
-        <h2 class="md-4" id="RefreshToken">Refresh Token</h2>
-        <p>Method "Refresh Token" digunakan untuk memperbaharui token User tanpa harus login ulang</p>
+        <h2 class="md-4" id="Select">Refresh Token</h2>
+        <p><b>Refresh Token</b> method is used to renew the User token without having to re-login. Refresh token expire in 1 year.</p>
         <ul class="nav nav-tabs">
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#refreshToken-request-url">URL</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#refreshToken-request-parameter">Parameter</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#refreshToken-request-Value">Parameter</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#refreshToken-example">Example</a></li>
         </ul>
 
@@ -186,31 +186,31 @@
                     </tbody>
                 </table>
             </div>
-            <div class="container tab-pane fade" id="refreshToken-request-parameter"  style="padding-left: 0px;">
+            <div class="container tab-pane fade" id="refreshToken-request-Value"  style="padding-left: 0px;">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <td>Jenis</td>
-                            <td>Parameter</td>
-                            <td>Wajib</td>
-                            <td>Tipe</td>
-                            <td>Keterangan</td>
+                            <td>Key</td>
+                            <td>Value</td>
+                            <td>Mandatory</td>
+                            <td>Type</td>
+                            <td>Description</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>HEAD</td>
                             <td>username</td>
-                            <td>Ya</td>
+                            <td>Yes</td>
                             <td>String</td>
                             <td>Username</td>
                         </tr>
                         <tr>
                             <td>HEAD</td>
                             <td>refresh-key</td>
-                            <td>Ya</td>
+                            <td>Yes</td>
                             <td>String</td>
-                            <td>Refresh Key dari login</td>
+                            <td>Refresh Key from login</td>
                         </tr>
                     </tbody>
                 </table>
@@ -221,9 +221,9 @@
         </div>
         <h2 class="md-4">Response</h2>
         <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#refreshToken-view-response">Response Sukses</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#refreshToken-fail-response">Response Gagal</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#refreshToken-explain-response">Penjelasan Response</a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#refreshToken-view-response">Success Response</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#refreshToken-fail-response">Fail Response</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#refreshToken-explain-response">Response Explanation</a></li>
         </ul>
         <div class="tab-content">
             <div class="container tab-pane active" id="refreshToken-view-response" style="padding-left: 0px;">
@@ -236,31 +236,31 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <td>Komponen</td>
-                            <td>Tipe</td>
-                            <td>Keterangan</td>
+                            <td>Key</td>
+                            <td>Type</td>
+                            <td>Description</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>_fail[x]</td>
                             <td>String</td>
-                            <td>Komentar keterangan fail</td>
+                            <td>Description fail comment</td>
                         </tr>
                         <tr>
                             <td>status</td>
                             <td>Number</td>
-                            <td>Kode status</td>
+                            <td>Status Code</td>
                         </tr>
                         <tr>
                             <td>message</td>
                             <td>String</td>
-                            <td>Pesan dari failure</td>
+                            <td>Message from failure</td>
                         </tr>
                         <tr>
                             <td>token</td>
                             <td>String</td>
-                            <td>Token baru setelah refresh</td>
+                            <td>New token after resfresh</td>
                         </tr>
                     </tbody>
                 </table>
@@ -270,10 +270,10 @@
         <hr>
 
         <h2 class="md-4" id="Select">Select</h2>
-        <p>Method "Select" digunakan untuk melihat dataset user (Admin privelege) dan sebuah data user (User privilege)</p>
+        <p><b>Select</b> method is used to view the database user (Admin privileges) and a single data user (User privileges).</p>
         <ul class="nav nav-tabs">
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#select-request-url">URL</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#select-request-parameter">Parameter</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#select-request-Value">Parameter</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#select-example">Example</a></li>
         </ul>
 
@@ -294,22 +294,22 @@
                     </tbody>
                 </table>
             </div>
-            <div class="container tab-pane fade" id="select-request-parameter"  style="padding-left: 0px;">
+            <div class="container tab-pane fade" id="select-request-Value"  style="padding-left: 0px;">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <td>Jenis</td>
-                            <td>Parameter</td>
-                            <td>Wajib</td>
-                            <td>Tipe</td>
-                            <td>Keterangan</td>
+                            <td>Key</td>
+                            <td>Value</td>
+                            <td>Mandatory</td>
+                            <td>Type</td>
+                            <td>Description</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>HEAD</td>
                             <td>username</td>
-                            <td>Ya</td>
+                            <td>Yes</td>
                             <td>String</td>
                             <td>Username</td>
                         </tr>
@@ -322,9 +322,9 @@
         </div>
         <h2 class="md-4">Response</h2>
         <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#select-view-response">Response Sukses</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#select-fail-response">Response Gagal</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#select-explain-response">Penjelasan Response</a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#select-view-response">Success Response</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#select-fail-response">Fail Response</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#select-explain-response">Response Explanation</a></li>
         </ul>
         <div class="tab-content">
             <div class="container tab-pane active" id="select-view-response" style="padding-left: 0px;">
@@ -337,26 +337,26 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <td>Komponen</td>
-                            <td>Tipe</td>
-                            <td>Keterangan</td>
+                            <td>Key</td>
+                            <td>Type</td>
+                            <td>Description</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>_fail[x]</td>
                             <td>String</td>
-                            <td>Komentar keterangan fail</td>
+                            <td>Description fail comment</td>
                         </tr>
                         <tr>
                             <td>status</td>
                             <td>Number</td>
-                            <td>Kode status</td>
+                            <td>Status Code</td>
                         </tr>
                         <tr>
                             <td>message</td>
                             <td>String</td>
-                            <td>Pesan dari failure</td>
+                            <td>Message from failure</td>
                         </tr>
                         <tr>
                             <td>_id</td>
@@ -376,12 +376,12 @@
                         <tr>
                             <td>role</td>
                             <td>String</td>
-                            <td>Tipe User</td>
+                            <td>Type User</td>
                         </tr>
                         <tr>
                             <td>created_at</td>
                             <td>DATE TIME</td>
-                            <td>Waktu data dibuat</td>
+                            <td>Data created time</td>
                         </tr>
                     </tbody>
                 </table>
@@ -391,10 +391,10 @@
         <hr>
 
         <h2 class="md-4" id="Insert">Insert</h2>
-        <p>Method "Insert" digunakan untuk membuat user baru oleh Admin (Admin Privilege)</p>
+        <p><b>Insert</b> method is used to create a new user by Admin (Admin Privilege).</p>
         <ul class="nav nav-tabs">
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#input-request-url">URL</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#input-request-parameter">Parameter</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#input-request-Value">Parameter</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#input-example">Example</a></li>
         </ul>
 
@@ -415,45 +415,45 @@
                     </tbody>
                 </table>
             </div>
-            <div class="container tab-pane fade " id="input-request-parameter"  style="padding-left: 0px;">
+            <div class="container tab-pane fade " id="input-request-Value"  style="padding-left: 0px;">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <td>Jenis</td>
-                            <td>Parameter</td>
-                            <td>Wajib</td>
-                            <td>Tipe</td>
-                            <td>Keterangan</td>
+                            <td>Key</td>
+                            <td>Value</td>
+                            <td>Mandatory</td>
+                            <td>Type</td>
+                            <td>Description</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>HEAD</td>
                             <td>username</td>
-                            <td>Ya</td>
+                            <td>Yes</td>
                             <td>String</td>
                             <td>Username</td>
                         </tr>
                         <tr>
                             <td>RAW</td>
                             <td>username</td>
-                            <td>Ya</td>
+                            <td>Yes</td>
                             <td>String</td>
                             <td>Username</td>
                         </tr>
                         <tr>
                             <td>RAW</td>
                             <td>password</td>
-                            <td>Ya</td>
+                            <td>Yes</td>
                             <td>String</td>
                             <td>Password</td>
                         </tr>
                         <tr>
                             <td>POST</td>
                             <td>role</td>
-                            <td>Wajib</td>
+                            <td>Yes</td>
                             <td>String</td>
-                            <td>Tipe User</td>
+                            <td>Type User</td>
                         </tr>
                     </tbody>
                 </table>
@@ -463,9 +463,9 @@
             </div>
             <h2 class="md-4">Response</h2>
             <ul class="nav nav-tabs">
-                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#input-view-response">Response Sukses</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#input-fail-response">Response Gagal</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#input-explain-response">Penjelasan Response</a></li>
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#input-view-response">Success Response</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#input-fail-response">Fail Response</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#input-explain-response">Response Explanation</a></li>
             </ul>
             <div class="tab-content">
                 <div class="container tab-pane active" id="input-view-response" style="padding-left: 0px;">
@@ -478,26 +478,26 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <td>Komponen</td>
-                                <td>Tipe</td>
-                                <td>Keterangan</td>
+                                <td>Key</td>
+                                <td>Type</td>
+                                <td>Description</td>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>_fail[x]</td>
                                 <td>String</td>
-                                <td>Komentar keterangan fail</td>
+                                <td>Description fail comment</td>
                             </tr>
                             <tr>
                                 <td>status</td>
                                 <td>Number</td>
-                                <td>Kode status</td>
+                                <td>Status Code</td>
                             </tr>
                             <tr>
                                 <td>message</td>
                                 <td>String</td>
-                                <td>Pesan dari failure</td>
+                                <td>Message from failure</td>
                             </tr>
                             <tr>
                                 <td>_id</td>
@@ -517,12 +517,12 @@
                             <tr>
                                 <td>role</td>
                                 <td>String</td>
-                                <td>Tipe User</td>
+                                <td>Type User</td>
                             </tr>
                             <tr>
                                 <td>created_at</td>
                                 <td>DATE TIME</td>
-                                <td>Waktu data dibuat</td>
+                                <td>Data created time</td>
                             </tr>
                         </tbody>
                     </table>
@@ -532,10 +532,10 @@
         <hr>
 
         <h2 class="md-4" id="Update">Update Data</h2>
-        <p>Method "Update" digunakan untuk memperbarui data dari User seperti Username dan Password (Admin Privelege)</p>
+        <p><b>Update</b> method is used to update data from the User such as Username and Password (Admin Privelege).</p>
         <ul class="nav nav-tabs">
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#update-request-url">URL</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#update-request-parameter">Parameter</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#update-request-Value">Parameter</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#update-example">Example</a></li>
         </ul>
 
@@ -556,43 +556,43 @@
                     </tbody>
                 </table>
             </div>
-            <div class="container tab-pane fade " id="update-request-parameter"  style="padding-left: 0px;">
+            <div class="container tab-pane fade " id="update-request-Value"  style="padding-left: 0px;">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <td>Jenis</td>
-                            <td>Parameter</td>
-                            <td>Wajib</td>
-                            <td>Tipe</td>
-                            <td>Keterangan</td>
+                            <td>Key</td>
+                            <td>Value</td>
+                            <td>Mandatory</td>
+                            <td>Type</td>
+                            <td>Description</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>HEAD</td>
                             <td>username</td>
-                            <td>Ya</td>
+                            <td>Yes</td>
                             <td>String</td>
                             <td>Username</td>
                         </tr>
                         <tr>
                             <td>Params (In URL)</td>
                             <td>id</td>
-                            <td>Wajib</td>
+                            <td>Mandatory</td>
                             <td>String</td>
                             <td>Id User</td>
                         </tr>
                         <tr>
                             <td>RAW</td>
                             <td>username</td>
-                            <td>Wajib</td>
+                            <td>Mandatory</td>
                             <td>String</td>
                             <td>Username</td>
                         </tr>
                         <tr>
                             <td>RAW</td>
                             <td>password</td>
-                            <td>Wajib</td>
+                            <td>Mandatory</td>
                             <td>String</td>
                             <td>Password</span></td>
                         </tr>
@@ -604,9 +604,9 @@
             </div>
             <h2 class="md-4">Response</h2>
             <ul class="nav nav-tabs">
-                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#update-view-response">Response Sukses</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#update-fail-response">Response Gagal</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#update-explain-response">Penjelasan Response</a></li>
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#update-view-response">Success Response</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#update-fail-response">Fail Response</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#update-explain-response">Response Explanation</a></li>
             </ul>
             <div class="tab-content">
                 <div class="container tab-pane active" id="update-view-response" style="padding-left: 0px;">
@@ -619,41 +619,41 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <td>Komponen</td>
-                                <td>Tipe</td>
-                                <td>Keterangan</td>
+                                <td>Key</td>
+                                <td>Type</td>
+                                <td>Description</td>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>_fail[x]</td>
                                 <td>String</td>
-                                <td>Komentar keterangan fail</td>
+                                <td>Description fail comment</td>
                             </tr>
                             <tr>
                                 <td>status</td>
                                 <td>Number</td>
-                                <td>Kode status</td>
+                                <td>Status Code</td>
                             </tr>
                             <tr>
                                 <td>message</td>
                                 <td>String</td>
-                                <td>Pesan dari failure</td>
+                                <td>Message from failure</td>
                             </tr>
                             <tr>
                                 <td>New Username</td>
                                 <td>String</td>
-                                <td>Username baru setelah update</td>
+                                <td>New username after update</td>
                             </tr>
                             <tr>
                                 <td>New Password</td>
                                 <td>String</td>
-                                <td>Password baru setelah update</td>
+                                <td>New password after update</td>
                             </tr>
                             <tr>
                                 <td>Encrypted Password</td>
                                 <td>String</td>
-                                <td>Chipertext dari password setelah proses hash</td>
+                                <td>Chipertext from password after hash</td>
                             </tr>
                         </tbody>
                     </table>
@@ -663,10 +663,10 @@
         <hr>
 
         <h2 class="md-4" id="Delete">Delete Data</h2>
-        <p>Method "Delete" digunakan untuk menghapus data user (Admin Privilege)</p>
+        <p><b>Delete</b> method is used to delete user data (Admin Privilege)</p>
         <ul class="nav nav-tabs">
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#delete-request-url">URL</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#delete-request-parameter">Parameter</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#delete-request-Value">Parameter</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#delete-example">Example</a></li>
         </ul>
 
@@ -687,29 +687,29 @@
                     </tbody>
                 </table>
             </div>
-            <div class="container tab-pane fade " id="delete-request-parameter"  style="padding-left: 0px;">
+            <div class="container tab-pane fade " id="delete-request-Value"  style="padding-left: 0px;">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <td>Jenis</td>
-                            <td>Parameter</td>
-                            <td>Wajib</td>
-                            <td>Tipe</td>
-                            <td>Keterangan</td>
+                            <td>Key</td>
+                            <td>Value</td>
+                            <td>Mandatory</td>
+                            <td>Type</td>
+                            <td>Description</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>HEAD</td>
                             <td>username</td>
-                            <td>Ya</td>
+                            <td>Yes</td>
                             <td>String</td>
                             <td>Username</td>
                         </tr>
                         <tr>
                             <td>Params (In URL)</td>
                             <td>id</td>
-                            <td>Wajib</td>
+                            <td>Yes</td>
                             <td>String</td>
                             <td>Id User</td>
                         </tr>
@@ -722,9 +722,9 @@
         </div>
         <h2 class="md-4">Response</h2>
         <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#delete-view-response">Response Sukses</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#delete-fail-response">Response Gagal</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#delete-explain-response">Penjelasan Response</a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#delete-view-response">Success Response</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#delete-fail-response">Fail Response</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#delete-explain-response">Response Explanation</a></li>
         </ul>
         <div class="tab-content">
             <div class="container tab-pane active" id="delete-view-response" style="padding-left: 0px;">
@@ -737,26 +737,26 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <td>Komponen</td>
-                            <td>Tipe</td>
-                            <td>Keterangan</td>
+                            <td>Key</td>
+                            <td>Type</td>
+                            <td>Description</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>_fail[x]</td>
                             <td>String</td>
-                            <td>Komentar keterangan fail</td>
+                            <td>Description fail comment</td>
                         </tr>
                         <tr>
                             <td>status</td>
-                            <td>Number</td>
-                            <td>Kode status</td>
+                              <td>Number</td>
+                            <td>Status Code</td>
                         </tr>
                         <tr>
                             <td>message</td>
                             <td>String</td>
-                            <td>Pesan dari failure</td>
+                            <td>Message from failure</td>
                         </tr>
                     </tbody>
                 </table>
